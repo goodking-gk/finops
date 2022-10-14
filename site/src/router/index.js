@@ -56,106 +56,78 @@ export const constantRoutes = [
   },
 
   {
-    path: '/example',
+    path: '/cost',
     component: Layout,
-    redirect: '/example/table',
-    name: 'Example',
-    meta: { title: 'Example', icon: 'el-icon-s-help' },
+    redirect: '/cost/expolorer',
+    name: 'CostManagement',
+    meta: { title: 'Cost Management', icon: 'el-icon-s-help' },
     children: [
       {
-        path: 'table',
-        name: 'Table',
-        component: () => import('@/views/table/index'),
-        meta: { title: 'Table', icon: 'table' }
+        path: 'expolorer',
+        name: 'CostExplorer',
+        component: () => import('@/views/cost_explorer/index'),
+        meta: { title: 'Cost Explorer', icon: 'table' }
       },
       {
-        path: 'tree',
-        name: 'Tree',
-        component: () => import('@/views/tree/index'),
-        meta: { title: 'Tree', icon: 'tree' }
-      }
-    ]
-  },
-
-  {
-    path: '/form',
-    component: Layout,
-    children: [
+        path: 'budgets',
+        name: 'Budgets',
+        component: () => import('@/views/budgets/index'),
+        meta: { title: 'Budgets', icon: 'tree' }
+      },
       {
-        path: 'index',
-        name: 'Form',
-        component: () => import('@/views/form/index'),
-        meta: { title: 'Form', icon: 'form' }
+        path: 'anomaly',
+        name: 'AnomalyCostDetection',
+        component: () => import('@/views/anomaly_cost/index'),
+        meta: { title: 'Anomaly Cost Detection', icon: 'form' }
       }
     ]
   },
 
   {
-    path: '/nested',
+    path: '/resources',
     component: Layout,
-    redirect: '/nested/menu1',
-    name: 'Nested',
+    redirect: '/resources/ri_overview',
+    name: 'Resources',
     meta: {
-      title: 'Nested',
+      title: 'Resources',
       icon: 'nested'
     },
     children: [
       {
-        path: 'menu1',
-        component: () => import('@/views/nested/menu1/index'), // Parent router-view
-        name: 'Menu1',
-        meta: { title: 'Menu1' },
-        children: [
-          {
-            path: 'menu1-1',
-            component: () => import('@/views/nested/menu1/menu1-1'),
-            name: 'Menu1-1',
-            meta: { title: 'Menu1-1' }
-          },
-          {
-            path: 'menu1-2',
-            component: () => import('@/views/nested/menu1/menu1-2'),
-            name: 'Menu1-2',
-            meta: { title: 'Menu1-2' },
-            children: [
-              {
-                path: 'menu1-2-1',
-                component: () => import('@/views/nested/menu1/menu1-2/menu1-2-1'),
-                name: 'Menu1-2-1',
-                meta: { title: 'Menu1-2-1' }
-              },
-              {
-                path: 'menu1-2-2',
-                component: () => import('@/views/nested/menu1/menu1-2/menu1-2-2'),
-                name: 'Menu1-2-2',
-                meta: { title: 'Menu1-2-2' }
-              }
-            ]
-          },
-          {
-            path: 'menu1-3',
-            component: () => import('@/views/nested/menu1/menu1-3'),
-            name: 'Menu1-3',
-            meta: { title: 'Menu1-3' }
-          }
-        ]
+        path: 'ri_overview',
+        component: () => import('@/views/ri_overview/index'),
+        name: 'RIOverview',
+        meta: { title: 'RI Overview', icon: 'table' }
       },
       {
-        path: 'menu2',
-        component: () => import('@/views/nested/menu2/index'),
-        name: 'Menu2',
-        meta: { title: 'menu2' }
-      }
-    ]
-  },
-
-  {
-    path: 'external-link',
-    component: Layout,
-    children: [
+        path: 'ri_suggestions',
+        component: () => import('@/views/ri_suggestions/index'),
+        name: 'RISuggestions',
+        meta: { title: 'RI Suggestions', icon: 'table' }
+      },
       {
-        path: 'https://panjiachen.github.io/vue-element-admin-site/#/',
-        meta: { title: 'External Link', icon: 'link' }
+        path: 'ri_utilization',
+        component: () => import('@/views/ri_utilization/index'),
+        name: 'RIUtilization',
+        meta: { title: 'RI Utilization', icon: 'table' }
+      },
+      {
+        path: 'allocated_suggestions',
+        component: () => import('@/views/allocated_suggestions/index'),
+        name: 'RIResources Suggestions',
+        meta: { title: 'Allocated Resources Suggestions', icon: 'tree' }
+      },
+      {
+        path: 'allocated_utilization',
+        component: () => import('@/views/allocated_utilization/index'),
+        name: 'RIResourcesUtilization',
+        meta: { title: 'Allocated Resources Utilization', icon: 'tree' }
+      },
+      {
+        path: 'carbon',
+        component: () => import('@/views/carbon/index'),
+        name: 'Carbon',
+        meta: { title: 'Carbon Emission', icon: 'form' }
       }
     ]
   },
